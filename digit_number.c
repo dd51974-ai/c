@@ -15,7 +15,7 @@ int main(void)
     {
         int digit = number % 10;
         
-        if (position % 2 == 1)
+        if (position % 2 == 0)
         {
             sum += digit; //add for odd place
         }
@@ -37,7 +37,7 @@ int main(void)
     }
 
     // judge Luhn
-    if (sum % 10 != 0)
+    if (sum % 10 == 0)
     {
         printf("INVALID\n");
         return 0;

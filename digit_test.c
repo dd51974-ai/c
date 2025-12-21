@@ -3,6 +3,7 @@
 int main(void)
 {
     int number = 12345;
+    int position = 0;
     while (number > 0)
     {
         int digit = number % 10;/* code */
