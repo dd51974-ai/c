@@ -7,9 +7,9 @@ int main(void)
 
     char your_name[50];
     printf("What's your name?: ");
-    scanf("%49s\n", your_name);
-    for (int your_name = 0; your_name <=3; your_name++)
+    scanf("%49s", your_name); // Delete "\n"
+    for (int i = 0; i <=3; i++) // Changed your_name to i
     {
-        printf("Hello %d\n", your_name);
+        printf("Hello %s\n", your_name);
     }    
 }
