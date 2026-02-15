@@ -2,8 +2,12 @@
 
 int main(void)
 {
-    for(int i = 0; i <= 5; i++){
-        printf("HI\n");
+    int n = 10;
+
+    // Initialization of loop variable
+    int i;
+    for(int i = 0; i <= n; i++){
+        printf("%d\n", i);
     }
 
     return 0;
