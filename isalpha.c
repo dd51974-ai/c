@@ -6,8 +6,8 @@ int main(void)
     char text[100];
 
     printf("Text: ");
-    scanf("%s", text);
-    
+    fgets(text, sizeof(text), stdin);
+
     if (isalpha(text[0]))
     {
         printf("This is an alphabet.\n");
