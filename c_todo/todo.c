@@ -28,7 +28,9 @@ int main(void)
         case 1:
             /* code */
             printf("Add Task\n");
-            scanf(" %99[^\n]",tasks);
+            scanf(" %99[^\n]",);
+            tasks[task_count].tasks_done = false;
+            task_count++;
             break;
         case 2:
             printf("Show Tasks\n");
