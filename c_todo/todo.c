@@ -11,7 +11,7 @@ typedef struct todo
 int main(void)
 {
     Task tasks[100];
-    int task_count = 0;
+    int task_count = 0; // task_countは整数型の変数
     while (1)
     {
         
@@ -28,8 +28,11 @@ int main(void)
         case 1:
             /* code */
             printf("Add Task\n");
-            scanf(" %99[^\n]",);
+            // ①タスク名を入力して保存する
+            scanf(" %99[^\n]", tasks[task_count].title);
+            // ② 完了状態をfalseにする
             tasks[task_count].tasks_done = false;
+            // ③ 条件登録を増やす
             task_count++;
             break;
         case 2:
