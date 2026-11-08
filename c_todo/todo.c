@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct todo
+typedef struct todo // structure
 {
     /* data */
     char title[100]; // title name
@@ -29,20 +29,34 @@ int main(void)
             /* code */
             printf("Add Task\n");
             // ①タスク名を入力して保存する
-            scanf(" %99[^\n]", tasks[task_count].title);
+            scanf(" %99[^\n]", tasks[task_count].title); // Save
             // ② 完了状態をfalseにする
             tasks[task_count].tasks_done = false;
             // ③ 条件登録を増やす
             task_count++;
             break;
         case 2:
-            printf("Show Tasks\n");
-            int todo;
+            printf("===== MY TODO LIST =====\n");
             for (int i = 0;i < task_count; i++)
             {
-                printf("%s", tasks[i].title);
+                if (tasks[i].tasks_done)
+                {
+                    printf("%s", tasks[i].title);
+                    printf("[Done]");
+                    printf("\n");
+
+                }
+                else
+                {
+                    printf("%d.", i+1);
+                    printf("%s", tasks[i].title);
+                    printf(" [Not Done]\n");
+                    printf("\n");
+                }
+                
+                
             }
-            return task_count;
+            break;
             
         case 3:
             printf("Complete Task\n");
