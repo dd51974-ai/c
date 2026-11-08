@@ -41,6 +41,7 @@ int main(void)
             {
                 if (tasks[i].tasks_done)
                 {
+                    printf("%d.", i+1);
                     printf("%s", tasks[i].title);
                     printf("[Done]");
                     printf("\n");
