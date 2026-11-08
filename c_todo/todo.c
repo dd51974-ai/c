@@ -38,7 +38,12 @@ int main(void)
         case 2:
             printf("Show Tasks\n");
             int todo;
-            break;
+            for (int i = 0;i < task_count; i++)
+            {
+                printf("%s", tasks[i].title);
+            }
+            return task_count;
+            
         case 3:
             printf("Complete Task\n");
             break;
