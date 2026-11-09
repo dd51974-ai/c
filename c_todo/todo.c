@@ -60,8 +60,28 @@ int main(void)
             break;
             
         case 3:
-            printf("Complete Task\n");
+            int task_number;
+            
+            for (int i = 0; i < task_number; i++)
+            {
+
+            if (tasks[+1].tasks_done == false)
+            {
+                tasks[i+1].tasks_done = true;
+                printf("%d.", task_count + 1);
+                printf("%s.", tasks[task_count].title);
+                printf("Done\n");
+            }
+            else
+            {
+                printf("error\n");
+                printf("\n");   
+            }
+            }
+        
             break;
+        
+            
         case 4:
             printf("Delete Task\n");
             break;
