@@ -61,10 +61,11 @@ int main(void)
             
         case 3:
         {
+            printf("完了したい番号を入力して下さい\n");
             int task_number ;
+            scanf("%d", &task_number) ;
             if (tasks[task_number + 1].tasks_done == false)
             {
-                scanf("%d", &task_number) ;
                 tasks[task_number - 1].tasks_done = true;
                 printf("%d.", task_count - 1);
                 printf("%s.", tasks[task_count].title);
