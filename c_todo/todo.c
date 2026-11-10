@@ -60,11 +60,13 @@ int main(void)
             break;
             
         case 3:
-        int task_number;
-            if (tasks[task_number+1].tasks_done == false)
+        {
+            int task_number ;
+            if (tasks[task_number + 1].tasks_done == false)
             {
-                tasks[task_number+1].tasks_done = true;
-                printf("%d.", task_count + 1);
+                scanf("%d", &task_number) ;
+                tasks[task_number - 1].tasks_done = true;
+                printf("%d.", task_count - 1);
                 printf("%s.", tasks[task_count].title);
                 printf("Done\n");
             }
@@ -75,6 +77,8 @@ int main(void)
             }
         
             break;
+        }
+            
         
             
         case 4:
