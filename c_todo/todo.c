@@ -83,8 +83,13 @@ int main(void)
         
             
         case 4:
+        {
             printf("Delete Task\n");
+            int delete_number;
+            scanf("%d", &delete_number);
+            if (tasks[delete_number +1].tasks_done == true)
             break;
+        }
         case 5:
             return 0;
         }
