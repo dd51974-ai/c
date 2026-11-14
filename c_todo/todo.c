@@ -87,13 +87,14 @@ int main(void)
             printf("Delete Task\n");
             int delete_number;
             scanf("%d", &delete_number);
-            if (tasks[delete_number +1].tasks_done == true)
+            for (int i = delete_number - 1; i < task_count - 1; i++)
             {
-                for (int i = delete_number - 1; i < task_count -1; i++)
-                {
-                    tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
-                }
+                tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
             }
+            task_count--; // task_countの番号を消す
+            printf("Delete\n");
+            printf("No.%d", delete_number);
+            printf("\n");
             break;
         }
         case 5:
