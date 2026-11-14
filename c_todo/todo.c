@@ -88,6 +88,12 @@ int main(void)
             int delete_number;
             scanf("%d", &delete_number);
             if (tasks[delete_number +1].tasks_done == true)
+            {
+                for (int i = delete_number - 1; i < task_count -1; i++)
+                {
+                    tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
+                }
+            }
             break;
         }
         case 5:
