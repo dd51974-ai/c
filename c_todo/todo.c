@@ -61,8 +61,9 @@ int main(void)
             
         case 3:
         {
-            printf("完了したい番号を入力して下さい\n");
+            printf("Want to complete to the number.\n");
             int task_number ;
+            printf("No.");
             scanf("%d", &task_number) ;
             if (tasks[task_number + 1].tasks_done == false)
             {
@@ -86,16 +87,25 @@ int main(void)
         {
             printf("Delete Task\n");
             int delete_number;
+            printf("No.");
             scanf("%d", &delete_number);
-            for (int i = delete_number - 1; i < task_count - 1; i++)
+            if (delete_number >= 1&& delete_number <= task_count)
             {
-                tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
+                for (int i = delete_number - 1; i < task_count - 1; i++)
+                {
+                    tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
+                }
+                task_count--; // task_countの番号を消す
+                printf("Delete\n");
+                printf("No.%d", delete_number);
+                printf("\n");
+                break;
             }
-            task_count--; // task_countの番号を消す
-            printf("Delete\n");
-            printf("No.%d", delete_number);
-            printf("\n");
-            break;
+            else
+            {
+                printf("Invalid task number\n"); // 番号が一致しなかった時のエラー
+                break;
+            }
         }
         case 5:
             return 0;
