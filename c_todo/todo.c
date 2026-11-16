@@ -65,7 +65,7 @@ int main(void)
             int task_number ;
             printf("No.");
             scanf("%d", &task_number) ;
-            if (tasks[task_number + 1].tasks_done == false)
+            if (tasks[task_number + 1].tasks_done == false && task_number == task_count)
             {
                 tasks[task_number - 1].tasks_done = true;
                 printf("%d.", task_count - 1);
@@ -74,7 +74,7 @@ int main(void)
             }
             else
             {
-                printf("error\n");
+                printf("Sorry, this is wrong number.\n");
                 printf("\n");   
             }
         
