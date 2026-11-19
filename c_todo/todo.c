@@ -65,11 +65,15 @@ int main(void)
             int task_number ;
             printf("No.");
             scanf("%d", &task_number) ;
-            if (tasks[task_number >= 1].tasks_done == false && task_number == task_count) // -1を>=1に書き換え
+            if (tasks[task_number - 1].tasks_done == false && task_number <= task_count) // 
             {
-                tasks[task_number >= 1].tasks_done = true; // -1を>=1に書き換え
+                tasks[task_number - 1].tasks_done = true; // 
+                for (int i = task_number - 1; i < task_number - 1; i++)
+                {
+                    tasks[i] = tasks[i - 1];
+                }
                 printf("No.");
-                printf("%d.", task_count >= 1);
+                printf("%d.", task_count);
                 printf("%s", tasks[task_count].title);
                 printf("Done\n");
             }
