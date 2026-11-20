@@ -70,7 +70,7 @@ int main(void)
                 tasks[task_number - 1].tasks_done = true; //          
                 printf("No.");
                 printf("%d.", task_number); // countをnumberに変更
-                printf("%d", task_number - 1); // %d,
+                printf("%d", task_number - 1); // "%d, tasks[task_count].title"から"task_number - 1"に変更
                 printf("Done\n");
             }
             else
