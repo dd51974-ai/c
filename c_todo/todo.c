@@ -68,9 +68,8 @@ int main(void)
             if (task_number >= 1 && task_number <= task_count) // [task_number - 1]を>=1に変更
             {
                 tasks[task_number - 1].tasks_done = true; //          
-                printf("No.");
-                printf("%d.", task_number); // countをnumberに変更
-                printf("%d", task_number - 1); // "%d, tasks[task_count].title"から"task_number - 1"に変更
+                printf("No.%d.", task_number); // countをnumberに変更, No.と%dを統合
+                printf("%s\n", tasks[task_number - 1].title); // "%d, tasks[task_count].title"から"task_number - 1"に変更
                 printf("Done\n");
             }
             else
