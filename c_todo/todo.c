@@ -69,6 +69,15 @@ int main(void)
             {
                 tasks[task_number - 1].tasks_done = true; //          
                 printf("No.%d. %s Done\n", task_number, tasks[task_number - 1].title); // 2行あったtask_number, tasks[task_number - 1].titleを1行にまとめた
+                if (tasks[task_number - 1].tasks_done == true) // 完了済みタスクを二重に完了できないようにする処理
+                {
+                    printf("This task is already completed\n");
+                }
+                else
+                {
+                    printf("No.%d. %s Done\n", task_number, tasks[task_number - 1].title);
+                }
+                
             }
             else
             {
