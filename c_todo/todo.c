@@ -37,8 +37,14 @@ int main(void)
             break;
         case 2:
             printf("===== MY TODO LIST =====\n");
-            for (int i = 0;i < task_count; i++)
+            if (task_count == 0)
+                {
+                    printf("No tasks available\n");
+                }
+            else
             {
+                for (int i = 0;i < task_count; i++)
+            
                 if (tasks[i].tasks_done)
                 {
                     printf("%d.", i+1);
@@ -54,8 +60,6 @@ int main(void)
                     printf(" [Not Done]\n");
                     printf("\n");
                 }
-                
-                
             }
             break;
             
