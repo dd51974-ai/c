@@ -100,29 +100,34 @@ int main(void)
         {
             printf("Delete Task\n");
             int delete_number;
-            if (delete_number >= 0 && delete_number <= task_count)
-            {
-                printf("No.");
-                scanf("%d", &delete_number);    
-                for (int i = delete_number - 1; i < task_count - 1; i++)
-                {
-                    tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
-                }
-                task_count--; // task_countの番号を消す
-                printf("Delete\n");
-                printf("No.%d", delete_number);
-                printf("\n");
-                break;
-            }
-            else if(delete_number == 0) // タスクが無い時に表示されるプログラムを作った
+            printf("No."); //先にprintf, scanfを入れた
+            scanf("%d", &delete_number);
+            
+            if(delete_number == 0) // タスクが無い時に表示されるプログラムを作った
             {
                 printf("No tasks available\n");
             }
              
-            else
+            else //タスクがある時のプログラム
                 {
-                    printf("Invalid task number\n"); // 番号が一致しなかった時のエラー
-                    break;
+                    if (delete_number >= 0 && delete_number <= task_count)
+                    {
+                            
+                        for (int i = delete_number - 1; i < task_count - 1; i++)
+                        {
+                            tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
+                        }
+                        task_count--; // task_countの番号を消す
+                        printf("Delete\n");
+                        printf("No.%d", delete_number);
+                        printf("\n");
+                        break;
+                    }
+                    else
+                    {
+                        printf("Invalid task number\n"); // 番号が一致しなかった時のエラー
+                        break;
+                    }   
                 }                
             
             break;
