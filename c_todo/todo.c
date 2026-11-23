@@ -67,12 +67,15 @@ int main(void)
             scanf("%d", &task_number) ;
             if (task_number >= 1 && task_number <= task_count) // [task_number - 1]を>=1に変更
             {
-                tasks[task_number - 1].tasks_done = true; //          
-                printf("No.%d. %s Done\n", task_number, tasks[task_number - 1].title); // 2行あったtask_number, tasks[task_number - 1].titleを1行にまとめた    
-            }
-            else if (tasks[task_number - 1].tasks_done == true)
-            {
-                printf("This task is already completed\n");
+                printf("No.%d. %s Done\n", task_number, tasks[task_number - 1].title); // 2行あったtask_number, tasks[task_number - 1].titleを1行にまとめた
+                if (tasks[task_number - 1 ].tasks_done == true)
+                {
+                    printf("This task is already completed!\n");
+                }
+                else
+                {
+                    printf("No.%d. %s Done\n", task_number, tasks[task_number - 1].title); // 2行あったtask_number, tasks[task_number - 1].titleを1行にまとめた        
+                }            
             }
             
             else
@@ -80,6 +83,8 @@ int main(void)
                 printf("Sorry, this is wrong number.\n");
                 printf("\n");   
             }
+
+            
         
             break;
         }
