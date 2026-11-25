@@ -112,7 +112,10 @@ int main(void)
                 {
                     if (delete_number >= 1 && delete_number <= task_count)
                     {
-                            
+                        // 削除番号を入力
+                        // 番号をチェック
+                        // for文で移動
+                        // task_count--;
                         for (int i = delete_number - 1; i < task_count - 1; i++)
                         {
                             tasks[i] = tasks[i + 1]; //ここで次のタスクを前の位置に移動させる
