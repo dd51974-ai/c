@@ -103,7 +103,7 @@ int main(void)
             printf("No."); //先にprintf, scanfを入れた
             scanf("%d", &delete_number);
             
-            if(delete_number == 0) // タスクが無い時に表示されるプログラムを作った, delete_number = 0 の"0"を"1"に変更
+            if(task_count == 0) // タスクが無い時に表示されるプログラムを作った, delete_numberからtask_countに変更
             {
                 printf("No tasks available\n"); // タスクが無い
             }
