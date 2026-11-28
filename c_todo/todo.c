@@ -101,7 +101,6 @@ int main(void)
             printf("Delete Task\n");
             int delete_number;
             printf("No."); //先にprintf, scanfを入れた
-            scanf("%d", &delete_number);
             
             if(task_count == 0) // タスクが無い時に表示されるプログラムを作った, delete_numberからtask_countに変更
             {
@@ -110,6 +109,7 @@ int main(void)
              
             else //タスクがある時のプログラム
                 {
+                    scanf("%d", &delete_number); // elseの中に移動
                     if (delete_number >= 1 && delete_number <= task_count)
                     {
                         // for文で移動
