@@ -16,6 +16,7 @@ int main(void)
     {
         
         int choice ;
+        printf("Select Number\n"); // 選択肢を与える表示を作った
         printf("1. Add Task\n");
         printf("2. Show Tasks\n");
         printf("3. Complete Task\n");
@@ -26,14 +27,21 @@ int main(void)
         switch (choice)
         {
         case 1:
-            /* code */
-            printf("Add Task\n");
-            // ①タスク名を入力して保存する
-            scanf(" %99[^\n]", tasks[task_count].title); // Save
-            // ② 完了状態をfalseにする
-            tasks[task_count].tasks_done = false;
-            // ③ 条件登録を増やす
-            task_count++;
+            if (task_count < 100) // タスクが100件超えないプログラムを作った
+            {
+                printf("Add Task\n");
+                // ①タスク名を入力して保存する
+                scanf(" %99[^\n]", tasks[task_count].title); // Save
+                // ② 完了状態をfalseにする
+                tasks[task_count].tasks_done = false;
+                // ③ 条件登録を増やす
+                task_count++;
+            }
+            else
+            {
+                printf("Task list is full\n");
+            }
+            
             break;
         case 2:
             printf("===== MY TODO LIST =====\n");
@@ -100,7 +108,6 @@ int main(void)
         {
             printf("Delete Task\n");
             int delete_number;
-            printf("No."); //先にprintf, scanfを入れた
             
             if(task_count == 0) // タスクが無い時に表示されるプログラムを作った, delete_numberからtask_countに変更
             {
@@ -109,6 +116,7 @@ int main(void)
              
             else //タスクがある時のプログラム
                 {
+                    printf("No."); // elseに移動した
                     scanf("%d", &delete_number); // elseの中に移動
                     if (delete_number >= 1 && delete_number <= task_count)
                     {
@@ -122,6 +130,7 @@ int main(void)
                         printf("Delete\n");
                         printf("No.%d", delete_number);
                         printf("\n");
+                        printf("This task number is delete!\n"); //消去したことを表示させた
                         break;
                     }
                     else
